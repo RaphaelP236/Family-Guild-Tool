@@ -1,0 +1,19 @@
+name = "family-guild-tool"
+main = "src/worker.js"
+compatibility_date = "2026-06-02"
+
+[triggers]
+crons = ["5 1,9,17 * * FRI-MON", "*/2 17 * * *", "0 18 * * MON"]
+
+[vars]
+# Optional. Leave empty for no shared access key.
+# Set a real value with: wrangler secret put ACCESS_KEY
+ACCESS_KEY = ""
+
+# Create this once with:
+#   npx wrangler kv namespace create DECK_CACHE
+# Then uncomment and paste the returned id here:
+#
+[[kv_namespaces]]
+binding = "DECK_CACHE"
+id = "6d8f1e706d2d4b6eaf6e60adcd53b52e"
